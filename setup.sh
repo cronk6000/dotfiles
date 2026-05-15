@@ -42,6 +42,11 @@ install_claude() {
   curl -fsSL https://claude.ai/install.sh | bash
 }
 
+install_starship() {
+  log "Installing Starship..."
+  curl -sS https://starship.rs/install.sh | sh
+}
+
 print_next_steps() {
   log ""
   log "Setup complete."
@@ -54,6 +59,7 @@ main() {
   install_packages
   install_npm_packages
   install_claude
+  install_starship
   print_next_steps
 }
 

@@ -46,6 +46,10 @@ if command -v mise >/dev/null 2>&1; then
   eval "$(mise activate zsh)"
 fi
 
+if command -v starship >/dev/null 2>&1; then
+  eval "$(starship init zsh)"
+fi
+
 # Machine-specific config
 if [[ -f "$HOME/.zsh_extra" ]]; then
   source "$HOME/.zsh_extra"
