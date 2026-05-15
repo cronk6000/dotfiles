@@ -63,14 +63,6 @@ install_starship() {
   curl -sS https://starship.rs/install.sh | sh
 }
 
-configure_macos_headless() {
-  if [[ "${OSTYPE:-}" != darwin* ]]; then
-    return
-  fi
-
-  "$DOTFILES_DIR/macos-headless.sh"
-}
-
 print_next_steps() {
   log ""
   log "Setup complete."
@@ -84,7 +76,6 @@ main() {
   install_npm_packages
   install_claude
   install_starship
-  configure_macos_headless
   print_next_steps
 }
 

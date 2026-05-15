@@ -5,17 +5,15 @@ Dotfiles managed by symlinking files from this repository into `$HOME`.
 ## Install
 
 Bootstrap Homebrew, install baseline packages, install global npm tools,
-install Claude Code, install Starship, and configure macOS headless settings:
+install Claude Code, and install Starship:
 
 ```sh
 ./setup.sh
 ```
 
-The baseline Homebrew packages are listed in `Brewfile`. The setup script
-also installs `@openai/codex` globally with npm and Claude Code with the
-official install script. Starship is installed with its official shell
-installer. On macOS, setup also prompts before applying each headless system
-setting.
+The baseline Homebrew packages are listed in `Brewfile`. The setup script also
+installs `@openai/codex` globally with npm and Claude Code with the official
+install script. Starship is installed with its official shell installer.
 
 After setup completes, run the dotfile installer separately:
 
