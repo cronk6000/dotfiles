@@ -1,5 +1,6 @@
 brew "gh"
 brew "git"
+brew "cmake"
 brew "jq"
 brew "mise"
 brew "node"
