@@ -4,6 +4,23 @@ Dotfiles managed by symlinking files from this repository into `$HOME`.
 
 ## Install
 
+Bootstrap Homebrew, install baseline packages, and install global npm tools:
+
+```sh
+./setup.sh
+```
+
+The baseline Homebrew packages are listed in `Brewfile`. The setup script
+also installs `@openai/codex` globally with npm.
+
+After setup completes, run the dotfile installer separately:
+
+```sh
+./install.sh
+```
+
+## Dotfiles Only
+
 Run:
 
 ```sh
