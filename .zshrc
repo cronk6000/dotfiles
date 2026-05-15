@@ -41,6 +41,20 @@ setopt auto_cd
 setopt interactive_comments
 setopt no_beep
 
+# Prefix-filtered history search with Up/Down.
+autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search
+bindkey "^[[B" down-line-or-beginning-search
+bindkey "^[OA" up-line-or-beginning-search
+bindkey "^[OB" down-line-or-beginning-search
+
+# Autosuggestions
+if [[ -r "${HOMEBREW_PREFIX:-/opt/homebrew}/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]]; then
+  source "${HOMEBREW_PREFIX:-/opt/homebrew}/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+fi
+
 # Tool initialization
 if command -v mise >/dev/null 2>&1; then
   eval "$(mise activate zsh)"

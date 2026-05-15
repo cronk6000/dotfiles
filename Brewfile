@@ -5,5 +5,6 @@ brew "mise"
 brew "node"
 brew "python"
 brew "ripgrep"
+brew "zsh-autosuggestions"
 
 cask "1password-cli"
