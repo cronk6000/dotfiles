@@ -37,6 +37,11 @@ install_npm_packages() {
   npm install -g @openai/codex
 }
 
+install_claude() {
+  log "Installing Claude Code..."
+  curl -fsSL https://claude.ai/install.sh | bash
+}
+
 print_next_steps() {
   log ""
   log "Setup complete."
@@ -48,6 +53,7 @@ main() {
   install_homebrew
   install_packages
   install_npm_packages
+  install_claude
   print_next_steps
 }
 
