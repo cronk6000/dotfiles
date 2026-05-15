@@ -114,7 +114,11 @@ discover_dotfiles() {
         ;;
     esac
 
-    printf '%s\n' "$name"
+    if [[ -d "$entry" ]]; then
+      find "$entry" -type f -print | sed "s#^$DOTFILES_DIR/##"
+    else
+      printf '%s\n' "$name"
+    fi
   done
 }
 
@@ -137,6 +141,7 @@ link_dotfile() {
       return 0
     fi
   elif [[ ! -e "$target" ]]; then
+    run mkdir -p "$(dirname "$target")"
     run ln -s "$source" "$target"
     log "Linked: $target -> $source"
     return 0
@@ -149,12 +154,14 @@ link_dotfile() {
       ;;
     overwrite)
       run rm -rf "$target"
+      run mkdir -p "$(dirname "$target")"
       run ln -s "$source" "$target"
       log "Linked: $target -> $source"
       ;;
     backup)
       backup="$target.backup.$(date +%Y%m%d%H%M%S)"
       run mv "$target" "$backup"
+      run mkdir -p "$(dirname "$target")"
       run ln -s "$source" "$target"
       log "Backed up: $target -> $backup"
       log "Linked: $target -> $source"
