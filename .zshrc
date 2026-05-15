@@ -41,6 +41,12 @@ setopt auto_cd
 setopt interactive_comments
 setopt no_beep
 
+# Aliases
+alias cc="claude"
+alias ccd="claude --dangerously-skip-permissions"
+alias cx="codex"
+alias cxd="codex --sandbox workspace-write --ask-for-approval never"
+
 # Prefix-filtered history search with Up/Down.
 autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
 zle -N up-line-or-beginning-search
