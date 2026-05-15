@@ -1,0 +1,28 @@
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+[commit]
+	gpgsign = true
+[core]
+	editor = "/usr/bin/vim"
+	excludesfile = ~/.gitignore
+[credential]
+	helper = osxkeychain
+[credential "https://github.com"]
+	helper =
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper =
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[gpg]
+	format = ssh
+[init]
+	defaultBranch = main
+[push]
+	default = current
+[user]
+	email = 122589111+cronk6000@users.noreply.github.com
+	name = cronk
+	signingkey = ~/.ssh/id_ed25519_github.pub

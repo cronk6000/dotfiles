@@ -1,0 +1,12 @@
+*~
+.DS_Store
+.Trashes
+node_modules
+npm-debug.log
+
+# Claude
+settings.local.json
+.claude/skills/private-**/*
+.claude/todo
+.claude/agent-memory/
+
