@@ -5,15 +5,16 @@ Dotfiles managed by symlinking files from this repository into `$HOME`.
 ## Install
 
 Bootstrap Homebrew, install baseline packages, install global npm tools,
-install Claude Code, and install Starship:
+install Claude Code, install the Hugging Face CLI, and install Starship:
 
 ```sh
 ./setup.sh
 ```
 
 The baseline Homebrew packages are listed in `Brewfile`. The setup script also
-installs `@openai/codex` globally with npm and Claude Code with the official
-install script. Starship is installed with its official shell installer.
+installs `@openai/codex` globally with npm, Claude Code with the official
+install script, and the Hugging Face CLI with its official shell installer.
+Starship is installed with its official shell installer.
 
 After setup completes, run the dotfile installer separately:
 

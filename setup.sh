@@ -53,6 +53,16 @@ install_claude() {
   curl -fsSL https://claude.ai/install.sh | bash
 }
 
+install_hf_cli() {
+  if command -v hf >/dev/null 2>&1; then
+    log "Hugging Face CLI already installed: $(command -v hf)"
+    return
+  fi
+
+  log "Installing Hugging Face CLI..."
+  curl -LsSf https://hf.co/cli/install.sh | bash
+}
+
 install_starship() {
   if command -v starship >/dev/null 2>&1; then
     log "Starship already installed: $(command -v starship)"
@@ -75,6 +85,7 @@ main() {
   install_packages
   install_npm_packages
   install_claude
+  install_hf_cli
   install_starship
   print_next_steps
 }
